@@ -1,5 +1,4 @@
 //SHIFT
-
 export const shift = (array) => {
   let a;
   let rest;
