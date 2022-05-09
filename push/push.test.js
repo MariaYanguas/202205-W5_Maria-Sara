@@ -1,7 +1,7 @@
 import { push } from './push';
 
 describe('Given the function push', () => {
-  describe('When recibe a new item', () => {
+  describe('When receive a new item', () => {
     test('should return the new length', () => {
       //Arrange
       const arrayInitial = ['Naranja', 'Pera'];
