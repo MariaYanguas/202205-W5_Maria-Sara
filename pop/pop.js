@@ -14,5 +14,3 @@ export const pop = (arr) => {
 
   return newArray;
 };
-
-typeof String;
