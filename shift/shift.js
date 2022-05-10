@@ -4,6 +4,5 @@ export const shift = (array) => {
   let rest;
   [a, ...rest] = array;
   array = rest;
-
   return a;
 };
