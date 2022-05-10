@@ -5,24 +5,22 @@ describe('Given the function pop', () => {
     test('should return an empty array ', () => {
       //Arrange
       const EmptyArray = [];
-      const returnedValue = [];
+
       //Act
-      const result2 = pop(EmptyArray);
       //Expect
-      expect(result2).toStrictEqual(returnedValue);
+      expect(() => pop(EmptyArray)).toThrow(RangeError);
     });
   });
 
   describe('When receive an undefined array', () => {
     test('should return a message Error ', () => {
       //Arrange
-      const EmptyArray
-        //const returnedValue = [];
-        //Act
-        //const result2 = ;
-        //Expect
-        expect(() => pop(EmptyArray)).toThrow(SyntaxError
-        );
+      let undefArray;
+      //const returnedValue = [];
+      //Act
+      //const result2 = ;
+      //Expect
+      expect(() => pop(undefArray)).toThrow(TypeError);
     });
   });
 
@@ -42,11 +40,11 @@ describe('Given the function pop', () => {
     test('should throw a message error ', () => {
       //Arrange
       const stringVariable = 'Hola';
-      const message = 'MEEEC';
+      const errorMessage = "Can't use pop on a string";
       //Act
       const result = pop(stringVariable);
       //Expect
-      expect(result).toStrictEqual(message);
+      expect(result).toStrictEqual(errorMessage);
     });
   });
 
@@ -54,11 +52,11 @@ describe('Given the function pop', () => {
     test('should throw a message error ', () => {
       //Arrange
       const numberVariable = 123;
-      const lastItem = ['e'];
+      const errorMessageNumber = "Can't use pop on a number";
       //Act
       const result = pop(numberVariable);
       //Expect
-      expect(result).toStrictEqual(lastItem);
+      expect(result).toStrictEqual(errorMessageNumber);
     });
   });
 });
