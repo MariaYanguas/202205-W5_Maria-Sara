@@ -1,8 +1,8 @@
 import { shift } from './shift';
 
 describe('Given the function shift', () => {
-  describe('When receive an array', () => {
-    test('should return the first item', () => {
+  describe('When receive an array with Strings or Numbers', () => {
+    test('should delete the first item and return it', () => {
       //Arrange
       const firstArr = [10, 20, 30, 40, 50];
       const returnedItem = 10;
