@@ -40,11 +40,12 @@ describe('Given the function pop', () => {
     test('should throw a message error ', () => {
       //Arrange
       const stringVariable = 'Hola';
-      const errorMessage = "Can't use pop on a string";
       //Act
-      const result = pop(stringVariable);
+
       //Expect
-      expect(result).toStrictEqual(errorMessage);
+      expect(() => pop(...stringVariable)).toThrow(
+        TypeError("Can't use pop on a string")
+      );
     });
   });
 
@@ -52,11 +53,11 @@ describe('Given the function pop', () => {
     test('should throw a message error ', () => {
       //Arrange
       const numberVariable = 123;
-      const errorMessageNumber = "Can't use pop on a number";
       //Act
-      const result = pop(numberVariable);
       //Expect
-      expect(result).toStrictEqual(errorMessageNumber);
+      expect(() => pop(numberVariable)).toThrow(
+        TypeError("Can't use pop on a number")
+      );
     });
   });
 });
