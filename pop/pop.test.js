@@ -2,13 +2,13 @@ import { pop } from './pop';
 
 describe('Given the function pop', () => {
   describe('When receive an empty array', () => {
-    test('should return an empty array ', () => {
+    test('should throw a message error ', () => {
       //Arrange
       const EmptyArray = [];
 
       //Act
       //Expect
-      expect(() => pop(EmptyArray)).toThrow(RangeError);
+      expect(() => pop(EmptyArray)).toThrow(TypeError('Invalid array length'));
     });
   });
 

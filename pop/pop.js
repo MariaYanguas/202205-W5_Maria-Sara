@@ -1,5 +1,8 @@
 export const pop = (arr) => {
   let newArray = [];
+  if (typeof arr === []) {
+    throw new TypeError('Invalid array length');
+  }
   if (typeof arr === 'string') {
     throw new TypeError("Can't use pop on a string");
   } else if (typeof arr === 'number') {
