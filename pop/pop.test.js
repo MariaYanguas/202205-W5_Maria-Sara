@@ -41,27 +41,12 @@ describe('Given the function pop', () => {
       //Arrange
       const array = ['a', 'b', 'c', 'd', 'e'];
       const changedArray = ['a', 'b', 'c', 'd'];
+      const changedArrayLength = changedArray.length;
       //Act
       const usingPopFunction = pop(array);
-      const arrayResult= console.log(array)
-
+      const arrayResult = array.length;
       //Expect
-      expect(arrayResult)).toStrictEqual(changedArray);
-    });
-  });
-
-
-
-  describe('When receive a String', () => {
-    test('should throw a message error ', () => {
-      //Arrange
-      const stringVariable = 'Hola';
-      //Act
-
-      //Expect
-      expect(() => pop(...stringVariable)).toThrow(
-        TypeError("Can't use pop on a string")
-      );
+      expect(arrayResult).toStrictEqual(changedArrayLength);
     });
   });
 
@@ -110,6 +95,19 @@ describe('Given the function pop', () => {
       const result = pop(array);
       //Expect
       expect(result).toStrictEqual(returnedValue);
+    });
+  });
+
+  describe('When receive a String', () => {
+    test('should throw a message error ', () => {
+      //Arrange
+      const stringVariable = 'Hola';
+      //Act
+
+      //Expect
+      expect(() => pop(...stringVariable)).toThrow(
+        TypeError("Can't use pop on a string")
+      );
     });
   });
 });
