@@ -37,7 +37,7 @@ describe('Given the function pop', () => {
   });
 
   describe('When receive an array with Strings or Numbers', () => {
-    test('should delete the last item modifying the array length', () => {
+    test('should delete the last item modifying the array length and content', () => {
       //Arrange
       const array = ['a', 'b', 'c', 'd', 'e'];
       const changedArray = ['a', 'b', 'c', 'd'];
@@ -47,6 +47,7 @@ describe('Given the function pop', () => {
       const arrayResult = array.length;
       //Expect
       expect(arrayResult).toStrictEqual(changedArrayLength);
+      expect(array).toEqual(changedArray);
     });
   });
 
