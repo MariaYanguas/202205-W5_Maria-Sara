@@ -1,12 +1,11 @@
 export const pop = (arr) => {
   let deletedValue = [];
-  if (typeof arr === []) {
+  if (arr.length === 0) {
     throw new TypeError('Invalid array length');
   }
-  if (typeof arr === 'string') {
-    throw new TypeError("Can't use pop on a string");
-  } else if (typeof arr === 'number') {
-    throw new TypeError("Can't use pop on a number");
+
+  if (Array.isArray(arr) === false) {
+    throw new TypeError();
   }
   for (let i = 0; i < arr.length; i++) {
     deletedValue = arr[i];
