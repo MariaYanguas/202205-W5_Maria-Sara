@@ -88,16 +88,4 @@ describe('Given the function shift', () => {
       expect(result).toStrictEqual(returnedValue);
     });
   });
-
-  describe('When receive an array with Strings and the last item is the primitive NaN', () => {
-    test('should delete the item and return it ', () => {
-      //Arrange
-      const array = [NaN, 'a', 'b', 'c'];
-      const returnedValue = NaN;
-      //Act
-      const result = shift(array);
-      //Expect
-      expect(result).toStrictEqual(returnedValue);
-    });
-  });
 });
