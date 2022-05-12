@@ -4,7 +4,7 @@ export const pop = (arr) => {
     throw new TypeError('Invalid array length');
   }
 
-  if (typeof Array.isArray(arr) === false) {
+  if (Array.isArray(arr) === false) {
     throw new TypeError('Invalid Object. Introduce an Array.');
   }
   for (let i = 0; i < arr.length; i++) {
