@@ -3,6 +3,9 @@ export const every = (arr, fn) => {
     return true;
   }
 
+  if (Array.isArray(arr) === false) {
+    throw new TypeError();
+  }
   let pusher = [];
   for (let i = 0; i < arr.length; i++) {
     if (fn(arr[i]) === true) {

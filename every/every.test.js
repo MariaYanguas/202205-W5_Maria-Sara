@@ -39,4 +39,47 @@ describe('Given the function every', () => {
       expect(result).toBe(expectedResult);
     });
   });
+
+  describe('When receive a Number or a String, instead of an Array ', () => {
+    test('should throw a message error ', () => {
+      //Arrange
+      const numberVariable = 123;
+      const stringVariable = 'Hello';
+      const providedFunction = (currentValue) => currentValue < 10;
+      //Act
+      //Expect
+      expect(() => every(numberVariable, providedFunction)).toThrow(TypeError);
+      expect(() => every(stringVariable, providedFunction)).toThrow(TypeError);
+    });
+  });
+
+  describe('When receive a Number or a String, instead of an Array ', () => {
+    test('should throw a message error ', () => {
+      //Arrange
+      const numberVariable = 123;
+      const stringVariable = 'Hello';
+      const providedFunction = (currentValue) => currentValue > 10;
+      //Act
+      //Expect
+      expect(() => every(numberVariable, providedFunction)).toThrow(TypeError);
+      expect(() => every(stringVariable, providedFunction)).toThrow(TypeError);
+    });
+  });
+
+  describe('When the array contains a NaN ', () => {
+    test('should return false ', () => {
+      //Arrange
+      const atTheEnd = [2, 3, 60, NaN];
+      const atTheBeginning = [NaN, 2, 3, 60];
+      const expectedValue = false;
+      const providedFunction = (currentValue) => currentValue < 10;
+
+      //Act
+      const resultEnd = every(atTheEnd, providedFunction);
+      const resultBeginning = every(atTheBeginning, providedFunction);
+      //Expect
+      expect(resultEnd).toBe(expectedValue);
+      expect(resultBeginning).toBe(expectedValue);
+    });
+  });
 });
