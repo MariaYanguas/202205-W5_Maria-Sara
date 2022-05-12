@@ -51,15 +51,13 @@ describe('Given the function pop', () => {
     });
   });
 
-  describe('When receive a Number', () => {
+  describe('When receive a Number or a String, ', () => {
     test('should throw a message error ', () => {
       //Arrange
       const numberVariable = 123;
       //Act
       //Expect
-      expect(() => pop(numberVariable)).toThrow(
-        TypeError("Can't use pop on a number")
-      );
+      expect(() => pop(numberVariable)).toThrow(TypeError);
     });
   });
 
@@ -106,9 +104,7 @@ describe('Given the function pop', () => {
       //Act
 
       //Expect
-      expect(() => pop(...stringVariable)).toThrow(
-        TypeError("Can't use pop on a string")
-      );
+      expect(() => pop(...stringVariable)).toThrow(TypeError);
     });
   });
 });
