@@ -5,7 +5,7 @@ export const pop = (arr) => {
   }
 
   if (Array.isArray(arr) === false) {
-    throw new TypeError('Invalid Object. Introduce an Array.');
+    throw new TypeError();
   }
   for (let i = 0; i < arr.length; i++) {
     deletedValue = arr[i];

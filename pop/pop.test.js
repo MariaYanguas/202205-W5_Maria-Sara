@@ -96,15 +96,4 @@ describe('Given the function pop', () => {
       expect(result).toStrictEqual(returnedValue);
     });
   });
-
-  describe('When receive a String', () => {
-    test('should throw a message error ', () => {
-      //Arrange
-      const stringVariable = 'Hola';
-      //Act
-
-      //Expect
-      expect(() => pop(...stringVariable)).toThrow(TypeError);
-    });
-  });
 });
