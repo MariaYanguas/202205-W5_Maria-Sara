@@ -55,9 +55,11 @@ describe('Given the function pop', () => {
     test('should throw a message error ', () => {
       //Arrange
       const numberVariable = 123;
+      const stringVariable = 'Hello';
       //Act
       //Expect
       expect(() => pop(numberVariable)).toThrow(TypeError);
+      expect(() => pop(stringVariable)).toThrow(TypeError);
     });
   });
 
