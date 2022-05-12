@@ -28,15 +28,19 @@ describe('Given the function every', () => {
   });
 
   describe('When receive an empty array', () => {
-    test('should return true using a function that compares is if > or <  than any number ', () => {
+    test('should return true, either if the function asks for > or <  than any number ', () => {
       //Arrange
       const array = [];
-      const providedFunction = (currentValue) => currentValue < 10;
+      const smallerFunction = (currentValue) => currentValue < 10;
+      const biggerFunction = (currentValue) => currentValue > 50;
       const expectedResult = true;
       //Act
-      const result = every(array, providedFunction);
+      const resultSmaller = every(array, smallerFunction);
+      const resultBigger = every(array, biggerFunction);
+
       //Expect
-      expect(result).toBe(expectedResult);
+      expect(resultSmaller).toBe(expectedResult);
+      expect(resultBigger).toBe(expectedResult);
     });
   });
 
@@ -53,20 +57,7 @@ describe('Given the function every', () => {
     });
   });
 
-  describe('When receive a Number or a String, instead of an Array ', () => {
-    test('should throw a message error ', () => {
-      //Arrange
-      const numberVariable = 123;
-      const stringVariable = 'Hello';
-      const providedFunction = (currentValue) => currentValue > 10;
-      //Act
-      //Expect
-      expect(() => every(numberVariable, providedFunction)).toThrow(TypeError);
-      expect(() => every(stringVariable, providedFunction)).toThrow(TypeError);
-    });
-  });
-
-  describe('When the array contains a NaN ', () => {
+  describe('When the array contains a NaN, in any position ', () => {
     test('should return false ', () => {
       //Arrange
       const atTheEnd = [2, 3, 60, NaN];
