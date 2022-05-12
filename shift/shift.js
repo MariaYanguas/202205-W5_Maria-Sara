@@ -1,6 +1,6 @@
 //SHIFT
 export const shift = (arr) => {
-  if (typeof arr === []) {
+  if (arr.length === 0) {
     throw new TypeError('Invalid array length');
   }
   if (typeof arr === 'string') {
