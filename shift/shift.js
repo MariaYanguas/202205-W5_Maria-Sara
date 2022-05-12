@@ -1,12 +1,9 @@
-//SHIFT
 export const shift = (arr) => {
-  if (typeof arr === []) {
+  if (arr.length === 0) {
     throw new TypeError('Invalid array length');
   }
-  if (typeof arr === 'string') {
-    throw new TypeError("Can't use shift on a string");
-  } else if (typeof arr === 'number') {
-    throw new TypeError("Can't use shift on a number");
+  if (Array.isArray(arr) === false) {
+    throw new TypeError();
   }
 
   let firstItem = arr[0];
